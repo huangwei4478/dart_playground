@@ -21,12 +21,12 @@ void main() {
     return 'You are wonderful, $name, and $numOfPeople people also think so.';
   };
 
-  print(wonderful(name: 'huangwei', numOfPeople: 33));
-  print(wonderful(name: 'wei', numOfPeople: 309));
+  print(wonderful(_name: 'huangwei', numOfPeople: 33));
+  print(wonderful(_name: 'wei', numOfPeople: 309));
 
   const people = ['Chris', 'Tiffani', 'Pablo'];
   people.forEach((element) {
-    print(wonderful(name: element));
+    print(wonderful(_name: element));
   });
 
   int add(int a, int b) => a + b;
