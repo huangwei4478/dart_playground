@@ -4,6 +4,15 @@ void main() {
   print(user);
   print(user2);
   SomeClass.myMethod();
+
+  final bert = Student(firstName: 'bert', lastName: '', grade: 95);
+  final ernie = Student(firstName: 'ernie', lastName: '', grade: 85);
+  print(bert);
+  print(ernie);
+
+  final sphere = Sphere(radius: 12);
+  print(sphere.volumn);
+  print(sphere.area);
 }
 
 // 为什么看Dart 
@@ -82,4 +91,28 @@ class MySingleton {
   MySingleton._();
   static final MySingleton instance = MySingleton._();
   factory MySingleton() => instance;
+}
+
+class Student {
+  final String firstName;
+  final String lastName;
+  final int grade;
+
+  const Student({required this.firstName, required this.lastName, required this.grade});
+
+  @override
+  String toString() {
+    return 'Student: $firstName $lastName, grade = $grade';
+  }
+}
+
+class Sphere {
+  final int _radius;
+  Sphere({required int radius}) : assert(radius > 0), 
+                                  _radius = radius;
+
+  double get volumn => 4 / 3 * pi * _radius * _radius * _radius;
+  double get area => 4 * pi * _radius * _radius;
+
+  static final double pi = 3.14159265358;
 }
